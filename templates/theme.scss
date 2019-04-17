@@ -1720,6 +1720,7 @@ footer {
   height: 250px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .site-logo-wrap {
@@ -1757,10 +1758,7 @@ footer {
         display: table;
         position:relative;
         z-index: 10;
-        a {
-          display: table-cell;
-          vertical-align: middle;
-        }
+        padding-top: 1rem;
       }
     }
   }
@@ -3203,6 +3201,7 @@ and (max-width : 320px) {
     margin-right: auto;
     .title {
       text-align: left;
+      padding-left: 2rem;
     }
   }
   .site-logo-wrap .site-logo header img {
