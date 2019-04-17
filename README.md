@@ -4,9 +4,9 @@ Don't have server access, and can only update theme files through web interface.
 
 Base theme: 'Headliner' by NationBuilder https://headliner-theme.nationbuilder.com/
 
-File notes:
+Usage notes:
 
-* theme.scss is copied and modified from base theme file. Edit as needed, and simply copy/paste entire file when updating.
+* Pages in templates folder are copied and modified from base theme file. Edit as needed, and simply copy/paste entire file when updating.
 * Files in page-content folder are named by page name, and should be copied/pasted in 'source' view of destination page when updating.
 * Files in scripts folder are custom javascript files for use on indicated pages.
   * To add a new script:
