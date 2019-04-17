@@ -1,0 +1,42 @@
+{% unless page.type_name == "Donation (v2)" %}
+<nav id="menu" role="navigation">
+  <div class="nav-menu">
+    <div id="topnav-wrap" class="topnav-wrap width-container">
+      <ul id="topnav" class="topnav desktop-nav">
+        {% for child in site.root_nav_pages %}
+        {% if child.leaf? or child.nav_children.size == 0 %}
+        <li {% if child.is_or_is_ancestor_of_current_page? %}class="active"{% endif %}>
+          <a href="{{ child.url }}">{{ child.name }}</a>
+        </li>
+        {% else %}
+        <li class="{% if child.is_or_is_ancestor_of_current_page? %}active{% endif %} drop">
+          <a href="{{ child.url }}">{{ child.name }} <i class="icon-angle-down"></i></a>
+          <ul class="sub">
+            {% if site.show_parent_in_nav_dropdown? %}
+            <li class="show-parent"><a href="{{ child.url }}">{{ child.name }}</a></li>
+            {% else %}
+            <li class="show-parent mobile-visible"><a href="{{ child.url }}">{{ child.name }}</a></li>
+            {% endif %}
+            {% for child2 in child.nav_children %}
+            <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="user-menu clearfix mobile-visible tablet-visible">
+  <div class="user-menu-controls left">
+    <a href="#menu" class="menu-link"><i class="icon-menu"></i>Menu</a>
+  </div>
+  <div class="user-menu-controls right">
+    <span class="user-menu-button">
+      <a href="/forms/user_sessions/new" data-behavior="cache-comment"><i class="icon-user"></i></a>
+    </span>
+  </div>
+</div>
+{% endunless %}
