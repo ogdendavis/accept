@@ -774,6 +774,19 @@ header.splash {
   margin-bottom: 1em;
 }
 
+// Adjustment to headline styling on pages
+h2.headline {
+  font-size: 4rem;
+  padding-bottom: 7px;
+  border-bottom: 10px solid #666;
+  border-right: 5px solid #666;
+}
+
+h2.headline::after {
+  display: none;
+  visibility: hidden;
+}
+
 // off canvas mobile nav
 
 nav {
