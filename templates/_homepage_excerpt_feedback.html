@@ -1,0 +1,83 @@
+<!-- Removing this template altogether, or removing the form from the template, breaks the base theme. Therefore, just hide the form! Oh, and don't copy this comment when transferring to the live site -->
+
+<div class="form accept--hidden">
+
+  {% form_for feedback %}
+  {% hidden_field_tag "page_id", homepage_excerpt.id %}
+
+  <div class="form-errors">{% error_messages_for feedback %}</div>
+
+  {% if homepage_excerpt.feedback.is_content? %}
+  <div class="row-fluid">
+    <div class="span12">
+      {% text_area "content", class:"textarea autogrow", placeholder:homepage_excerpt.feedback.content_name %}
+    </div>
+  </div>
+
+  {% if site.ask_to_publish_to_stream? %}
+  <div class="row-fluid">
+    <div class="span12">
+      <label class="checkbox" for="feedback_is_private">{% check_box "is_private", class:"checkbox" %} Don't post this publicly</label>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
+  <div class="row-fluid">
+    <div class="span6">
+      {% text_field "first_name", class:"text", placeholder:"First Name" %}
+    </div>
+    <div class="span6">{% text_field "last_name", class:"text", placeholder:"Last Name" %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if request.sorta_logged_in? == false or request.current_signup.has_mobile? == false %}
+  <div class="row-fluid">
+    <div class="span6">{% email_field "email", class:"text", placeholder:"Email" %}</div>
+
+    {% if site.ask_for_mobiles? %}
+    <div class="span6">
+      {% phone_field "mobile_number", class:"text", placeholder:"Mobile phone (optional)" %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="row-fluid">
+    <div class="span6">
+      <label class="checkbox" for="feedback_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label>
+    </div>
+    {% if site.ask_for_mobiles? %}
+    <div class="span6">
+      <label class="checkbox" for="feedback_mobile_opt_in">{% check_box "mobile_opt_in", class:"checkbox" %} Send me text messages</label>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+
+  {% if request.sorta_logged_in? == false or request.current_signup.has_full_address? == false %}
+  <div class="row-fluid">
+    <div class="span12">
+      {% text_field "submitted_address", class:"text", placeholder:"Address" %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if homepage_excerpt.feedback.is_volunteers? and site.ask_for_volunteers? %}
+  {% if request.logged_in? == false or request.current_signup.is_volunteer == false %}
+  <div class="row-fluid">
+    <div class="span12">
+      <label class="checkbox" for="feedback_is_volunteer">{% check_box "is_volunteer", class:"checkbox" %} I want to volunteer</label>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  {% submit_tag homepage_excerpt.feedback.submit_button_name, class:"submit-button" %}
+  <div class="form-submit"></div>
+
+  {% endform_for %}
+
+</div>
