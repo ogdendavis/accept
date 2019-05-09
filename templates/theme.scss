@@ -3325,6 +3325,13 @@ and (max-width : 320px) {
   .list__detail {
       margin-bottom: $element-spacing;
   }
+
+  .image--float-right {
+    display: inline-block;
+    width: 40%;
+    margin-left: 5%;
+    float: right;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -3332,6 +3339,13 @@ and (max-width : 320px) {
     .featured-text {
       font-size: 1.3rem;
       padding: 1.5rem;
+    }
+
+    .image--float-right {
+      display: block;
+      float: none;
+      width: 90%;
+      margin: 0 auto 2rem auto;
     }
   }
 }
