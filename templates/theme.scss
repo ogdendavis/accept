@@ -3276,6 +3276,11 @@ and (max-width : 320px) {
     opacity: 0;
 }
 
+.accept--address {
+  font-weight: 700;
+  margin-left: 2rem;
+}
+
 .accept--page {
   $accept-gray: #333;
   $section-spacing: 4rem;
