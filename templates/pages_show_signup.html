@@ -1,3 +1,4 @@
+<div class="accept--page join">
 {% include "breadcrumbs" %}
 
 {% if page.headline.size > 0 %}
@@ -10,6 +11,17 @@
   <div id="intro" class="intro">
     {{ page.signup.content }}
   </div>
+  {% else %}
+  <div id="intro" class="intro">
+    <div class="featured-text">
+      Join the community of admissions professionals working to further equity and justice in our communities.
+    </div>
+    <h3>Admissions Professionals</h3>
+    <p>If you work in any aspect of college admissions, <a href="https://www.facebook.com/groups/529200500616435/" target="_blank">join the ACCEPT Facebook group!</a></p>
+    <br />
+    <h3>Professionals, Community Members, Parents, Students</h3>
+    <p>Follow ACCEPT on <a href="https://www.facebook.com/ACCEPTCultivatingEquityAndPeaceToday/" target="_blank">Facebook</a> and <a href="https://www.instagram.com/acceptinsta/" target="_blank">Instagram</a>.</p>
+  </div>
   {% endif %}
 
   {% if page.show_social_slider? and page.public_activities_count > 0 %}
@@ -17,6 +29,8 @@
   {% endif %}
 
   <div class="form-wrap">
+    <h3>Join Our Mailing List</h3>
+    <p>Sign up to receive information about ACCEPT’s advocacy, action, and research.</p>
     <div class="form">
 
       {% form_for signup %}
@@ -48,7 +62,7 @@
         </div>
 
         {% unless page.show_consent_form? %}
-        <div class="row-fluid">
+        <div class="row-fluid accept--hidden">
           <div class="span6"><label class="checkbox" for="signup_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label></div>
           {% if site.ask_for_mobiles? %}
           <div class="span6"><label class="checkbox" for="signup_mobile_opt_in">{% check_box "mobile_opt_in", class:"checkbox" %} Send me text message updates</label></div>
@@ -89,7 +103,7 @@
       {% endif %}
       {% endif %}
 
-      <div class="row-fluid">
+      <div class="row-fluid accept--hidden">
         <div class="span12"><label for="signup_activity_is_private" class="checkbox">{% check_box "activity_is_private", class:"checkbox" %} Don't publish this on the website</label></div>
       </div>
 
@@ -125,11 +139,7 @@
   </div>
   {% endif %}
 
-  <div class="like-page">
-    <strong>Like us to spread the word</strong>
-    {% include "like_page" %}
-  </div>
-
   {% if page.show_stream? %}
   {% include "page_stream" %}
   {% endif %}
+</div>
