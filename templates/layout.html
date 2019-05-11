@@ -48,33 +48,21 @@
           <div class="header-container clearfix {% if site.has_background_image? %}no-background{% endif %}">
             {% if page.features_count > 0 %}
             <div class="features-container has-slider">
-              {% if site.has_meta_image? %}
-              <div class="site-logo">
-                <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
-              </div>
-              {% else %}
               <div class="site-logo">
                 <header>
                   <h1 class="title"><a href="/">{{ site.long_name }}</a></h1>
                 </header>
               </div>
-              {% endif %}
               {% include "features" %}
             </div>
             {% else %}
             {% if site.has_header_image? %}
               <div class="site-logo-wrap has-header-image">
-                {% if site.has_meta_image? %}
-                <div class="site-logo">
-                  <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
-                </div>
-                {% else %}
                 <div class="site-logo">
                   <header>
                     <h1 class="title"><a href="/">{{ site.name }}</a></h1>
                   </header>
                 </div>
-                {% endif %}
                 <div class="header-image" style="background-image: url('{{ site.header_image_url_1026 }}')"></div>
               </div>
             {% else %}
@@ -187,7 +175,7 @@
                       <div class="footer-text">{{ site.footer_content }}</div>
                     </div>
                   </div>
-                  <div class="row-fluid">
+                  <div class="row-fluid accept--centered">
                     <div class="span6">
                       <img src="{{ site.meta_image_url }}" alt="ACCEPT" class="footer__logo">
                       <p class="footer__copyright">Copyright &#169; 2019 ACCEPT</p>

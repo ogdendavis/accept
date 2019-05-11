@@ -3281,6 +3281,10 @@ and (max-width : 320px) {
   margin-left: 2rem;
 }
 
+.accept--centered {
+  text-align: center;
+}
+
 .accept--page {
   $accept-gray: #333;
   $section-spacing: 4rem;
