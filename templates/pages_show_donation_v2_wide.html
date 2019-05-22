@@ -320,10 +320,14 @@
             </div>
           </div>
           <div class="row-fluid padtopless">
-            <div clas="span12 padbottomless">
+            <div class="span12 padbottomless">
               {% if page.donation_v2.merchant_account.has_contribution_rules? %}
               <label for="is_confirmation_text" class="padtopmore"><strong>Contribution rules</strong></label>
+              {% comment %}
               {{ page.donation_v2.merchant_account.contribution_rules }}
+              {% endcomment %}
+              ACCEPT is incorporated as a nonprofit corporation in Delaware.<br>
+              ACCEPT is currently pursuing IRS nonprofit status. <span class="accept--warning">Donations are appreciated, but not tax-deductible, at this time.</span> Donations given after Feb. 21, 2019 are retroactively tax deductible upon completion of the IRS process.
               <label for="donation_is_confirmed" class="checkbox padtopless">{% check_box "is_confirmed", class:"checkbox" %} I confirm that the above statements are true and accurate.</label>
               {% endif %}
               {% if site.ask_to_publish_to_stream? %}

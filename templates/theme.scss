@@ -3276,6 +3276,11 @@ and (max-width : 320px) {
     opacity: 0;
 }
 
+.accept--warning {
+  font-weight: 700;
+  color: red;
+}
+
 .accept--address {
   font-weight: 700;
   margin-left: 2rem;
