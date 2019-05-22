@@ -3045,8 +3045,7 @@ and (max-width : 320px) {
     background: none;
   }
 
-  .intro:after,
-  .submit-container:before {
+  .intro:after {
     content: "";
     display: block;
     height: 15px;
